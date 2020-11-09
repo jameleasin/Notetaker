@@ -1,25 +1,18 @@
-  
 
-var http = require("http");
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 
-var PORT = process.env.PORT || 3001;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-function handleRequest(request, response) {
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-  response.end("It Works!! Path Hit: " + request.url);
-}
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
-var server = http.createServer(handleRequest);
-
-  app.get("/", function(req, res) {
-      res.json(path.join(__dirname, "public/index.html"));
-    });
-
-app.listen(PORT, function() {
-
-  console.log("Server listening on: http://localhost:" + PORT);
-});
-
-app.get("/", function(req, res) {
-    res.json(path.join(__dirname, "public/index.html"));
-  });
+app.listen(PORT, () => {
+    console.log(`App listening on port: ${PORT}`);
+})

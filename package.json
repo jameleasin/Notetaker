@@ -2,14 +2,24 @@
   "name": "note-taker",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mathew-Harvey/Note-Taker.git"
+  },
+  "author": "Jamelea Sinclair",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameleasin/Notetaker/issues"
+  },
+  "homepage": "https://github.com/jameleasin/Notetaker#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "http": "0.0.1-security"
+    "app": "^0.1.0",
+    "express": "^4.17.1",
+    "require": "^2.4.20"
   }
 }
